@@ -1,0 +1,16 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {},
+  "author": "Stefan Candan",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2"
+  }
+}
