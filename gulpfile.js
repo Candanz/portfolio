@@ -1,14 +1,18 @@
 const gulp = require('gulp'),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
-    uglify = require('gulp-uglify'),
+    babel = require('gulp-babel-minify'),
     minifyCss = require('gulp-clean-css'),
-    imageMin = require('gulp-imagemin');
+    imageMin = require('gulp-imagemin')
+    util = require('gulp-util');
 
 gulp.task('html', () =>
 	gulp.src('app/*.html')
 		.pipe(useref())
-		.pipe(gulpif('*.js', uglify()))
+		.pipe(gulpif('*.js', babel({
+									removeConsole: true,
+									removeDebugger: true,
+								})))
 		.pipe(gulpif('*.css', minifyCss()))
 		.pipe(gulp.dest('dist'))
 );
